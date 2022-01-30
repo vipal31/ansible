@@ -13,4 +13,7 @@
           password: "{{password | password_hash('sha512')}}"
           state: absent
        with_items:
-           - roshani
+           - user1
+           - user2
+           - user3
+           - user4
