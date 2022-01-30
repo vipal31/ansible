@@ -5,7 +5,7 @@
   become_user: vipal
   become_method: sudo
   vars:
-    password: Dell@123!
+    password: password
   tasks:
      - name: create a user on all systems
        user:
