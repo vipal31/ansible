@@ -1,0 +1,16 @@
+---
+- name: Create a user
+  hosts: lab
+  become: yes
+  become_user: vipal
+  become_method: sudo
+  vars:
+    password: Dell@123!
+  tasks:
+     - name: create a user on all systems
+       user:
+          name: "{{item}}"
+          password: "{{password | password_hash('sha512')}}"
+          state: absent
+       with_items:
+           - roshani
